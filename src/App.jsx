@@ -1,17 +1,28 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
-
+import './App.css';
+import Profile from "./Profile.jsx";
 
 function App() {
 
-  const number = 6;
+
   return (
     <div>
-      <div>Number {number} is {number % 2 === 0 ? "Even" : "Odd"}</div>
+      <h2>Profile List</h2>
+
+      {Profile.map((student) => {
+        const validGender = ["Male", "Female"].includes(student.gender) ? student.gender : "Invalid";
+                return (
+        <div key={student.id}>
+          <p> <b>Rollno: </b>{student.rollno},</p>
+          <p><b>Name: </b>{student.name},</p>
+          <p> <b>Gender: </b>{validGender},</p>
+          <p><b>Std: </b>{student.std}</p>
+          <hr />
+        </div>
+        );
+      })}
+
     </div>
   );
 }
 
-export default App    
+export default App;
