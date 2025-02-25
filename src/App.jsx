@@ -4,11 +4,21 @@ import Profile from "./Profile.jsx";
 function App() {
 
 
+
+  const handleclick = (something) => {
+    console.log(something)
+  };
+
   return (
     <div>
       <h2>Profile List</h2>
 
-      {Profile.map((student) => {
+
+      <button onClick={ () => handleclick("Button 1 is clicked")}>Button 1 </button>
+      <button onClick={() => handleclick("Button 2 is clicked") }>Button 2 </button>
+
+
+      {/* {Profile.map((student) => {
         const validGender = ["Male", "Female"].includes(student.gender) ? student.gender : "Invalid";
                 return (
         <div key={student.id}>
@@ -19,7 +29,7 @@ function App() {
           <hr />
         </div>
         );
-      })}
+      })} */}
 
     </div>
   );
